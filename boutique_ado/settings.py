@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -116,10 +117,9 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': 
+        dj_database_url.parse('postgres://clxxptzhlpxfmy:92f95a3b4c5ea9122fe46eb1ec586684d138732c4eab125d901be637d3e8f2df@ec2-54-247-118-139.eu-west-1.compute.amazonaws.com:5432/dba43kfs9gv0nf')
+    
 }
 
 
